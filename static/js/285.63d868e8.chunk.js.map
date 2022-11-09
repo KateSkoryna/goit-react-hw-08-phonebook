@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/285.63d868e8.chunk.js","mappings":"sMAAe,SAASA,IACtB,OACE,0BACE,mCAGL,C","sources":["pages/Register.jsx"],"sourcesContent":["export default function Register() {\n  return (\n    <div>\n      <h2>World</h2>\n    </div>\n  );\n}\n"],"names":["Register"],"sourceRoot":""}
