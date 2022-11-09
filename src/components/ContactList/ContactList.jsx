@@ -5,9 +5,12 @@ import {
   ContactListText,
 } from './ContactList.styled';
 import { useEffect } from 'react';
-import { selectContactsByName, selectLoadingStatus } from 'redux/selectors';
+import {
+  selectContactsByName,
+  selectLoadingStatus,
+} from '../../redux/contacts/selectors';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchContacts, deleteContact } from 'redux/operations';
+import { fetchContacts, deleteContact } from '../../redux/contacts/operations';
 import Loader from 'components/Loader';
 
 const ContactList = () => {
