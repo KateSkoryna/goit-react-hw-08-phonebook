@@ -3,28 +3,34 @@ import { Form } from 'formik';
 import { Button } from '@mui/material';
 
 export const FormSection = styled.section`
-  max-width: 600px;
   margin-left: auto;
   margin-right: auto;
 `;
 
 export const FormBox = styled(Form)`
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  margin-bottom: 40px;
 `;
 
 export const FormLabel = styled.label`
-  width: 100%;
   margin-bottom: 10px;
   margin-top: 10px;
+  width: 100%;
+
+  @media screen and (min-width: 480px) {
+    width: 450px;
+  }
 `;
 
 export const FormInput = styled.input`
-  width: 100%;
   height: 30px;
+  width: 100%;
+
+  @media screen and (min-width: 480px) {
+    width: 450px;
+  }
 
   ${
     '' /* &:not(:last-child) {

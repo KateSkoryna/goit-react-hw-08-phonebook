@@ -3,6 +3,8 @@ import { css } from '@emotion/react';
 const GlobalStyles = css`
   body {
     margin: 0;
+    margin-left: auto;
+    margin-right: auto;
     font-family: 'Roboto', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

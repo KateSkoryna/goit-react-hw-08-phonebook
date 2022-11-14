@@ -2,13 +2,18 @@ import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
 
 export const Header = styled.header`
-  padding-top: 20px;
-  padding-bottom: 20px;
   border-bottom: 1px solid black;
-  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 export const Navigation = styled.nav`
+  @media screen and (max-width: 767px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   display: flex;
   justify-content: space-between;
 `;

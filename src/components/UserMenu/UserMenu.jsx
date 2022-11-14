@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import { logOut } from 'redux/auth/operations';
 import { useAuth } from 'hooks';
 import { Button } from '@mui/material';
-import { HeaderBox, UserTitle } from './UserMenu.styled';
+import { HeaderBox, UserTitle, UserMenuTitle } from './UserMenu.styled';
 
 const UserMenu = () => {
   const dispatch = useDispatch();
@@ -10,7 +10,7 @@ const UserMenu = () => {
 
   return (
     <>
-      <h1>Phonebook</h1>
+      <UserMenuTitle>Phonebook</UserMenuTitle>
       <HeaderBox>
         <UserTitle>{email}</UserTitle>
         <Button variant="outlined" onClick={() => dispatch(logOut())}>

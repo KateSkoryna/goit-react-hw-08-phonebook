@@ -1,5 +1,4 @@
 import React from 'react';
-import { Container } from '../components/App/Container.styled';
 import ContactForm from '../components/ContactForm';
 import Filter from '../components/Filter';
 import ContactList from '../components/ContactList';
@@ -15,11 +14,11 @@ const Contacts = () => {
   }, [dispatch]);
 
   return (
-    <Container>
+    <>
       <ContactForm />
       <Filter />
       <ContactList />
-    </Container>
+    </>
   );
 };
 

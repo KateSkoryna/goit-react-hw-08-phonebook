@@ -13,6 +13,7 @@ import {
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchContacts, deleteContact } from '../../redux/contacts/operations';
 import Loader from 'components/Loader';
+import { Container } from '../App/Container.styled';
 
 const ContactList = () => {
   const dispatch = useDispatch();
@@ -25,24 +26,26 @@ const ContactList = () => {
 
   return (
     <ContactSection>
-      <h2>Contacts</h2>
-      <ContactListBox>
-        {isLoading && <Loader />}
-        {contacts.map(({ id, name, phone }) => (
-          <ContactListItem key={id}>
-            <ContactListText>{name}</ContactListText>
-            <ContactListText>{phone}</ContactListText>
-            <ContactListBtn
-              variant="contained"
-              onClick={() => {
-                dispatch(deleteContact(id));
-              }}
-            >
-              Delete contact
-            </ContactListBtn>
-          </ContactListItem>
-        ))}
-      </ContactListBox>
+      <Container>
+        <h2>Contacts</h2>
+        <ContactListBox>
+          {isLoading && <Loader />}
+          {contacts.map(({ id, name, number }) => (
+            <ContactListItem key={id}>
+              <ContactListText>{name}</ContactListText>
+              <ContactListText>{number}</ContactListText>
+              <ContactListBtn
+                variant="contained"
+                onClick={() => {
+                  dispatch(deleteContact(id));
+                }}
+              >
+                Delete contact
+              </ContactListBtn>
+            </ContactListItem>
+          ))}
+        </ContactListBox>
+      </Container>
     </ContactSection>
   );
 };

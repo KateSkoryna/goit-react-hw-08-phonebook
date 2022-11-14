@@ -15,16 +15,16 @@ const SharedLayout = () => {
   return (
     <>
       <Global styles={GlobalStyles} />
-      <Container>
-        <Header>
+      <Header>
+        <Container>
           <Navigation>
             {isLoggedIn ? <UserMenu /> : <AuthNavigation />}
           </Navigation>
-        </Header>
-        <Suspense fallback={<Loader />}>
-          <Outlet />
-        </Suspense>
-      </Container>
+        </Container>
+      </Header>
+      <Suspense fallback={<Loader />}>
+        <Outlet />
+      </Suspense>
     </>
   );
 };
