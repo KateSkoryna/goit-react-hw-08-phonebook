@@ -1,4 +1,5 @@
 import {
+  ContactSection,
   ContactListBox,
   ContactListItem,
   ContactListBtn,
@@ -23,23 +24,26 @@ const ContactList = () => {
   }, [dispatch]);
 
   return (
-    <ContactListBox>
-      {isLoading && <Loader />}
-      {contacts.map(({ id, name, phone }) => (
-        <ContactListItem key={id}>
-          <ContactListText>Name: {name}</ContactListText>
-          <ContactListText>Number: {phone}</ContactListText>
-          <ContactListBtn
-            type="button"
-            onClick={() => {
-              dispatch(deleteContact(id));
-            }}
-          >
-            Delete contact
-          </ContactListBtn>
-        </ContactListItem>
-      ))}
-    </ContactListBox>
+    <ContactSection>
+      <h2>Contacts</h2>
+      <ContactListBox>
+        {isLoading && <Loader />}
+        {contacts.map(({ id, name, phone }) => (
+          <ContactListItem key={id}>
+            <ContactListText>{name}</ContactListText>
+            <ContactListText>{phone}</ContactListText>
+            <ContactListBtn
+              variant="contained"
+              onClick={() => {
+                dispatch(deleteContact(id));
+              }}
+            >
+              Delete contact
+            </ContactListBtn>
+          </ContactListItem>
+        ))}
+      </ContactListBox>
+    </ContactSection>
   );
 };
 

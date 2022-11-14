@@ -1,5 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { register, logIn, logOut, refreshUser } from './operations';
+import storage from 'redux-persist/lib/storage';
+import { persistReducer } from 'redux-persist';
 
 const initialState = {
   user: { name: null, email: null },
@@ -41,4 +43,10 @@ const authSlice = createSlice({
   },
 });
 
-export const authReducer = authSlice.reducer;
+const authPersistComfig = {
+  key: 'auth',
+  storage,
+  whitelist: ['token'],
+};
+
+export const authReducer = persistReducer(authPersistComfig, authSlice.reducer);
