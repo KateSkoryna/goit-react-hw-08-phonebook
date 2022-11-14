@@ -8,7 +8,7 @@ export const Header = styled.header`
 `;
 
 export const Navigation = styled.nav`
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 479px) {
     display: flex;
     flex-direction: column;
     align-items: center;
