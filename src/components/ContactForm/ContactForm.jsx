@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from '../../redux/contacts/operations';
 import { selectContacts } from '../../redux/contacts/selectors';
 import { Container } from '../App/Container.styled';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const ContactForm = () => {
   const initualValues = {
@@ -23,11 +24,10 @@ const ContactForm = () => {
   const dispatch = useDispatch();
 
   const handleOnSubmit = (values, { resetForm }) => {
-    console.log(values);
     contacts.find(
       contact => values.name.toLowerCase() === contact.name.toLowerCase()
     )
-      ? alert(`${values.name} is already in contacts.`)
+      ? Notify.failure(`${values.name} is already in contacts`)
       : dispatch(addContact(values));
     resetForm();
   };

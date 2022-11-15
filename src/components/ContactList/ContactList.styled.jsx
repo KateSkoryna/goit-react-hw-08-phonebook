@@ -47,4 +47,9 @@ export const ContactListBtn = styled(Button)`
   font-size: 12px;
   transition: scale 250ms linear, background-color 250ms linear,
     color 250ms linear;
+
+  &:hover {
+    background-color: rgb(158, 63, 176);
+    scale: 1.1;
+  }
 `;

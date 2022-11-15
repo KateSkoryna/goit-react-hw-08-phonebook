@@ -28,19 +28,18 @@ export const FormInput = styled.input`
   height: 30px;
   width: 100%;
 
-  @media screen and (min-width: 480px) {
-    width: 450px;
+  &:focus,
+  &:hover,
+  &:active {
+    border-color: rgb(158, 63, 176);
   }
 
-  ${
-    '' /* &:not(:last-child) {
-    margin-right: 20px;
-  } */
-  }
+  @media screen and (min-width: 480px) {
+    width: 450px;
+  } ;
 `;
 
 export const FormButton = styled(Button)`
-  ${'' /* display: block; */}
   margin-top: 20px;
   width: 160px;
   height: 40px;
@@ -48,12 +47,8 @@ export const FormButton = styled(Button)`
   transition: scale 250ms linear, background-color 250ms linear,
     color 250ms linear;
 
-  ${
-    '' /* :hover,
-  :focus {
-    background-color: #63868a;
-    color: #e1e4e9;
+  &:hover {
+    background-color: rgb(158, 63, 176);
     scale: 1.1;
-  } */
   }
 `;
