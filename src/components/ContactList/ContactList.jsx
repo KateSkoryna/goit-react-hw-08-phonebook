@@ -28,23 +28,27 @@ const ContactList = () => {
     <ContactSection>
       <Container>
         <h2>Contacts</h2>
-        <ContactListBox>
-          {isLoading && <Loader />}
-          {contacts.map(({ id, name, number }) => (
-            <ContactListItem key={id}>
-              <ContactListText>{name}</ContactListText>
-              <ContactListText>{number}</ContactListText>
-              <ContactListBtn
-                variant="contained"
-                onClick={() => {
-                  dispatch(deleteContact(id));
-                }}
-              >
-                Delete contact
-              </ContactListBtn>
-            </ContactListItem>
-          ))}
-        </ContactListBox>
+        {contacts.length === 0 ? (
+          <h2>Phonebook is empty</h2>
+        ) : (
+          <ContactListBox>
+            {isLoading && <Loader />}
+            {contacts.map(({ id, name, number }) => (
+              <ContactListItem key={id}>
+                <ContactListText>{name}</ContactListText>
+                <ContactListText>{number}</ContactListText>
+                <ContactListBtn
+                  variant="contained"
+                  onClick={() => {
+                    dispatch(deleteContact(id));
+                  }}
+                >
+                  Delete contact
+                </ContactListBtn>
+              </ContactListItem>
+            ))}
+          </ContactListBox>
+        )}
       </Container>
     </ContactSection>
   );

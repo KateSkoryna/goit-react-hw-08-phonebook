@@ -28,8 +28,7 @@ const ContactForm = () => {
       contact => values.name.toLowerCase() === contact.name.toLowerCase()
     )
       ? Notify.failure(`${values.name} is already in contacts`)
-      : dispatch(addContact(values));
-    resetForm();
+      : dispatch(addContact(values)) && resetForm();
   };
 
   return (
