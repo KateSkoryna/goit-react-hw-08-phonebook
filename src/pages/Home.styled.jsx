@@ -10,7 +10,7 @@ export const HeroImg = styled.div`
   animation: fadeInDown 1000ms forwards;
   object-fit: scale-down;
 
-  @media screen and (max-width: 1400px) {
+  @media screen and (max-width: 2400px) {
     background-image: url(${cover});
   }
 `;
